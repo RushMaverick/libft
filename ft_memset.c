@@ -5,24 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 17:30:11 by rrask             #+#    #+#             */
-/*   Updated: 2022/10/28 11:54:20 by rrask            ###   ########.fr       */
+/*   Created: 2022/10/31 11:04:08 by rrask             #+#    #+#             */
+/*   Updated: 2022/10/31 14:22:23 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*bcpy;
 
+	bcpy = (unsigned char *)b;
 	i = 0;
 	while (i < len)
 	{
-		((char *)b)[i] = c;
-		i++;
+		bcpy[i++] = (unsigned char)c;
 	}
 	return (b);
 }
