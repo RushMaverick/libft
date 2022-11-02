@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:34:02 by rrask             #+#    #+#             */
-/*   Updated: 2022/10/31 18:31:42 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/02 17:52:21 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,5 @@ int	ft_isalnum(size_t c)
 	{
 		return (2);
 	}
-	return (0);
-}
-
-int	main(void)
-{
-	printf("%d", ft_isalnum('a'));
-	printf("%d", ft_isalnum('2'));
-	printf("%d", ft_isalnum('B'));
-	printf("%d", ft_isalnum('!'));
 	return (0);
 }

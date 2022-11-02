@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:01 by rrask             #+#    #+#             */
-/*   Updated: 2022/10/31 18:31:52 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/02 17:52:11 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,4 @@ int	ft_isdigit(int c)
 		return (1);
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	printf("%d", ft_isdigit('a'));
-	printf("%d", ft_isdigit('1'));
-	printf("%d", ft_isdigit('.'));
-	return (0);
-}
+} 

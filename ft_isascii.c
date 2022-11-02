@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:31:21 by rrask             #+#    #+#             */
-/*   Updated: 2022/10/31 18:31:48 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/02 17:52:15 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,4 @@ int	ft_isascii(int c)
 		return (1);
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	printf("%d", ft_isascii(0));
-	printf("%d", ft_isascii(128));
 }
