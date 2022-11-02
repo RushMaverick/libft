@@ -1,25 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:57:01 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/02 14:56:21 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/01 15:52:59 by rrask             #+#    #+#             */
+/*   Updated: 2022/11/01 17:45:05 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	int	i;
+		int i;
+		char *a;
+		const char *b;
 
-	i = 0;
-	while (str[i] != '\0')
+	if (src < dst)
 	{
-		i++;
+		ft_memcpy(dst, src, n);
 	}
-	return (i);
+	else if (src > dst)
+	{
+		i = 0;
+		a = dst;
+		b = src;
+		while (n != 0)
+		{
+			a[i] = b[i];
+			i--;
+			n--;
+		}
+	}
+	return (dst);
+}
+
+int	main(void)
+{
+	char	arr[5];
+	char	*str;
+
+	str = "Test";
+	puts(arr);
+	puts("/n");
+	ft_memmove(arr, str, 5);
+	puts(arr);
+	return (0);
 }

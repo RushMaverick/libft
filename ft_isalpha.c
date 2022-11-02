@@ -6,12 +6,11 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:22:32 by rrask             #+#    #+#             */
-/*   Updated: 2022/10/26 17:06:45 by rrask            ###   ########.fr       */
+/*   Updated: 2022/10/31 18:31:45 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
