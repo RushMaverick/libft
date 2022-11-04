@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 15:52:59 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/04 11:05:09 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/03 14:05:04 by rrask             #+#    #+#             */
+/*   Updated: 2022/11/03 16:48:11 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-		int i;
-		char *a;
-		const char *b;
+	int	i;
 
-	if (src < dst)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		ft_memcpy(dst, src, n);
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i++;
 	}
-	else if (src > dst)
-	{
-		i = 0;
-		a = dst;
-		b = src;
-		while (n != 0)
-		{
-			a[i] = b[i];
-			i--;
-			n--;
-		}
-	}
-	return (dst);
+	return (NULL);
+}
+
+int	main(void)
+{
+    char *str1 = "Can you find the z in here?";
+	printf("The letter you are thinking of is: %s", ft_strchr(str1, 'z'));
+    return (0);
 }

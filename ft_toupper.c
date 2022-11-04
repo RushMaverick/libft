@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 15:52:59 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/04 11:05:09 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/03 11:13:53 by rrask             #+#    #+#             */
+/*   Updated: 2022/11/03 11:40:54 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+int	ft_toupper(int c)
 {
-		int i;
-		char *a;
-		const char *b;
+	size_t	new_c;
 
-	if (src < dst)
+	new_c = c;
+	if (new_c >= 97 || c <= 122)
 	{
-		ft_memcpy(dst, src, n);
+		new_c = new_c - 32;
 	}
-	else if (src > dst)
+	else
 	{
-		i = 0;
-		a = dst;
-		b = src;
-		while (n != 0)
-		{
-			a[i] = b[i];
-			i--;
-			n--;
-		}
+		return (0);
 	}
-	return (dst);
+	return (new_c);
+}
+
+int	main(void)
+{
+	printf("Letter is: %c", ft_toupper('a'));
+	return (0);
 }

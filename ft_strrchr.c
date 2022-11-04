@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 15:52:59 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/04 11:05:09 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/04 10:48:28 by rrask             #+#    #+#             */
+/*   Updated: 2022/11/04 12:57:14 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-		int i;
-		char *a;
-		const char *b;
+	int	j;
 
-	if (src < dst)
+	j = ft_strlen(s);
+	while (j + 1 > 0)
 	{
-		ft_memcpy(dst, src, n);
+		if (s[j] == (char)c)
+            return ((char *)s + j);
+        if (!*s)
+            return  ((void *)0);
+		j--;
 	}
-	else if (src > dst)
-	{
-		i = 0;
-		a = dst;
-		b = src;
-		while (n != 0)
-		{
-			a[i] = b[i];
-			i--;
-			n--;
-		}
-	}
-	return (dst);
+    return (0);
+}
+
+int	main(void)
+{
+	char *str1 = "Can you find the e here?";
+	printf("The last occurence is here: %s", ft_strrchr(str1, 'h'));
+	return (0);
 }
