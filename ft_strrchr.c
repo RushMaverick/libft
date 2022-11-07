@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:48:28 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/04 12:57:14 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/07 13:26:00 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ char	*ft_strrchr(const char *s, int c)
 	while (j + 1 > 0)
 	{
 		if (s[j] == (char)c)
-            return ((char *)s + j);
-        if (!*s)
-            return  ((void *)0);
+			return ((char *)s + j);
+		if (!*s)
+			return ((void *)0);
 		j--;
 	}
-    return (0);
+	return (0);
 }
 
 int	main(void)
