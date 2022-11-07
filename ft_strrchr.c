@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:48:28 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/07 13:26:00 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/07 13:27:57 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,5 @@ char	*ft_strrchr(const char *s, int c)
 			return ((void *)0);
 		j--;
 	}
-	return (0);
-}
-
-int	main(void)
-{
-	char *str1 = "Can you find the e here?";
-	printf("The last occurence is here: %s", ft_strrchr(str1, 'h'));
 	return (0);
 }
