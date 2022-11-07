@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 15:08:06 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/07 13:28:41 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/07 13:29:57 by rrask             #+#    #+#             */
+/*   Updated: 2022/11/07 15:43:50 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+# include "libft.h"
+    
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
-
+	int i;
+	unsigned char *new_s;
+	
 	i = 0;
-	if (s1[i] == '\0' || s2[i] == '\0')
-		return ((unsigned int)i);
-	while (n != 0 && (unsigned int)s1[i] == (unsigned int)s2[i])
+	new_s = (unsigned char *)s;
+	while (new_s[i] != (unsigned char)c && n != 0)
 	{
-		i++;
 		n--;
+		i++;
 	}
-	return ((unsigned int)*s1 - (unsigned int)*s2);
+	if (n == 0)
+	{
+		return (NULL);
+	}
+	return ((void *)&s[i]);
 }
