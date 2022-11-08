@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 10:48:28 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/08 13:48:24 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/08 15:02:03 by rrask             #+#    #+#             */
+/*   Updated: 2022/11/08 15:22:32 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void ft_putstr_fd(char *s, int fd)
 {
-	int	j;
-
-	j = ft_strlen(s);
-	while (j + 1 > 0)
+	if (!s)
+		return ;
+	while (*s)
 	{
-		if (s[j] == (char)c)
-			return ((char *)s + j);
-		if (!*s)
-			return ((void *)0);
-		j--;
+		write(fd, s, 1);
+		s++;
 	}
+}
+
+int	main(void)
+{
+	char *str1;
+
+	str1 = "Are you still there?";
+	ft_putstr_fd(str1, 1);
 	return (0);
 }
