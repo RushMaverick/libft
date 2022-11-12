@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:28:31 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/09 10:34:52 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/12 14:42:34 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,27 @@
 
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*ptr;
+	char *new_stack;
+	char *new_needle;
 
-	ptr = ft_strlen(needle);
-	if (needle == "")
-		return (haystack);
-	if (!needle)
+	new_stack = (char *)haystack;
+	new_needle = (char *)needle;
+	if (needle == NULL)
+		return ((char *)haystack);
+	if (!needle || len == 0)
 		return (NULL);
-	//Code here
-	return (ptr);
+	while (*new_stack != '\0')
+	{
+		// Go through haystack. 
+		while (*new_stack == *new_needle && *new_needle != '\0')
+		{
+			new_stack++;
+			new_needle++;
+			//This causes new_needle to be returned empty as it empties itself.
+		}
+		new_stack++;
+	}
+	return (new_needle);
 }
 
 int	main(void)
