@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 10:26:27 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/10 17:18:42 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/13 16:54:24 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int		ft_isascii(int c);
 int		ft_isalnum(size_t c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-int		ft_strcmp(const char *s1, const char *s2);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_atoi(const char *str);
 char	*ft_strchr(const char *s, int c);

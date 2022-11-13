@@ -6,33 +6,37 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:28:31 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/09 10:34:52 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/13 18:03:01 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "libft.h"
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*ptr;
+	size_t	i;
 
-	ptr = ft_strlen(needle);
-	if (needle == "")
-		return (haystack);
+	i = 0;
+	if (needle == NULL)
+		return ((char *)haystack);
 	if (!needle)
 		return (NULL);
-	//Code here
-	return (ptr);
+	while (i < len)
+	{
+	}
+	return (NULL);
 }
 
 int	main(void)
 {
-	char *str1;
-	char *str2;
+	char	*str1;
+	char	*str2;
+	char	*result;
 
 	str1 = "No rest for the wicked.";
 	str2 = "rest";
-	printf("The word is: %s\n", ft_strnstr(str1, str2, 24));
+	result = ft_strnstr(str1, str2, 8);
+	printf("Needle occurs first at: %s\n", result);
 	return (0);
 }
 
