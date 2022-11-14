@@ -6,62 +6,36 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:28:31 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/13 18:03:01 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/14 11:38:56 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
+	j = 0;
 	if (needle == NULL)
 		return ((char *)haystack);
-	if (!needle)
-		return (NULL);
 	while (i < len)
 	{
+		if (haystack[i] == needle[0])
+		{
+			j = 0;
+			while (j < (size_t)ft_strlen(needle))
+			{
+				if (haystack[j + i] != needle[j])
+					break ;
+				if (j == (size_t)ft_strlen(needle) - 1)
+					return ((char *)&haystack[i]);
+				j++;
+			}
+		}
+		i++;
 	}
 	return (NULL);
 }
-
-int	main(void)
-{
-	char	*str1;
-	char	*str2;
-	char	*result;
-
-	str1 = "No rest for the wicked.";
-	str2 = "rest";
-	result = ft_strnstr(str1, str2, 8);
-	printf("Needle occurs first at: %s\n", result);
-	return (0);
-}
-
-//      The strnstr() function locates the first occurrence of the null-terminated string needle in the string haystack, where not more than len characters are searched.  Characters that appear after a
-//      `\0' character are not searched.  Since the strnstr() function is a FreeBSD specific API, it should only be used when portability is not a concern.
-
-//      While the strcasestr() function uses the current locale, the strcasestr_l() function may be passed a locale directly. See xlocale(3) for more information.
-
-// RETURN VALUES
-//      If needle is an empty string, haystack is returned; if needle occurs nowhere in haystack, NULL is returned; otherwise a pointer to the first character of the first occurrence of needle is
-//      returned.
-
-// EXAMPLES
-//      The following sets the pointer ptr to the "Bar Baz" portion of largestring:
-
-//            const char *largestring = "Foo Bar Baz";
-//            const char *smallstring = "Bar";
-//            char *ptr;
-
-//            ptr = strstr(largestring, smallstring);
-
-//      The following sets the pointer ptr to NULL, because only the first 4 characters of largestring are searched:
-
-//            const char *largestring = "Foo Bar Baz";
-//            const char *smallstring = "Bar";
-//            char *ptr;
-
-//            ptr = strnstr(largestring, smallstring, 4);
