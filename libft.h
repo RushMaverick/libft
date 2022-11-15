@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 10:26:27 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/13 16:54:24 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/15 14:27:48 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void	*ft_calloc(size_t count, size_t size);
 int		ft_isalpha(int c);
 int		ft_isprint(int c);
 int		ft_isdigit(int c);
@@ -45,5 +46,6 @@ void	ft_putendl_fd(char *s, int fd);
 int		ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 #endif

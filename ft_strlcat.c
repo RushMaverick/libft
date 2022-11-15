@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 13:29:57 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/14 16:54:40 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/14 11:54:55 by rrask             #+#    #+#             */
+/*   Updated: 2022/11/15 14:24:43 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int				i;
-	unsigned char	*new_s;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	new_s = (unsigned char *)s;
-	while (new_s[i] != (unsigned char)c && n != 0)
+	j = 0;
+	if (src == NULL || dst == NULL)
+		return (0);
+	while (i < dstsize)
 	{
-		n--;
+		if (i == (size_t)ft_strlen(dst))
+		{
+			while (j < dstsize)
+			{
+				if (j == (size_t)ft_strlen(src))
+				{
+					return ((size_t)dst);
+				}
+				dst[i] = src[j];
+				i++;
+				j++;
+			}
+		}
 		i++;
 	}
-	if (n == 0)
-	{
-		return (NULL);
-	}
-	return ((void *)&s[i]);
+	return ((size_t)dst);
 }
