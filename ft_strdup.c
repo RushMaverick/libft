@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 14:26:40 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/17 13:41:52 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/17 13:09:21 by rrask             #+#    #+#             */
+/*   Updated: 2022/11/17 15:35:47 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strdup(const char *s1)
 {
-	void	*ptr;
-	size_t	mult;
+	char	*dup;
+	int		i;
 
-	mult = count * size;
-	if (count > 0 && size > 0)
-	{
-		if (mult % count != 0 || mult % size != 0)
-			return (NULL);
-	}
-	ptr = malloc(mult);
-	if (!count || !size)
+	if (!s1)
 		return (NULL);
-	ft_bzero(ptr, mult);
-	return (ptr);
-}
-
-int	main(void)
-{
-	ft_calloc(4, 2);
-	return (0);
+	dup = malloc((sizeof(char) * ft_strlen(s1) + 1));
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		dup[i] = s1[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }

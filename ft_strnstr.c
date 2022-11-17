@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:28:31 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/15 18:25:13 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/16 17:18:16 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,19 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 
-int main (void)
+int	main(void)
 {
-		str1 = "No rest for the wicked.";
+	char	*str1;
+	char	*str2;
+	char	*result;
+
+	str1 = "No rest for the wicked.";
 	str2 = "rest";
 	result = ft_strnstr(str1, str2, 24);
 	printf("Needle occurs first at: %s\n", result);
-
 	str2 = "ed";
 	result = ft_strnstr(str1, str2, 24);
 	printf("Needle occurs first at: %s\n", result);
-
 	str2 = "dog";
 	result = ft_strnstr(str1, str2, 24);
 	printf("Needle occurs first at: %s\n", result);

@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:04:08 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/01 10:55:23 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/16 17:56:32 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		bcpy[i++] = (unsigned char)c;
+		bcpy[i] = (unsigned char)c;
+		i++;
 	}
 	return (b);
 }
