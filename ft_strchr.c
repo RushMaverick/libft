@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:05:04 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/03 16:48:11 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/17 17:51:53 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,4 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	return (NULL);
-}
-
-int	main(void)
-{
-    char *str1 = "Can you find the z in here?";
-	printf("The letter you are thinking of is: %s", ft_strchr(str1, 'z'));
-    return (0);
 }

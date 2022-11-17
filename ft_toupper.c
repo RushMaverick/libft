@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:13:53 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/03 11:40:54 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/17 17:53:42 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,4 @@ int	ft_toupper(int c)
 		return (0);
 	}
 	return (new_c);
-}
-
-int	main(void)
-{
-	printf("Letter is: %c", ft_toupper('a'));
-	return (0);
 }

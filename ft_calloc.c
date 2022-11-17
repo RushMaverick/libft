@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 14:26:40 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/17 13:41:52 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/17 17:47:35 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,4 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	ft_bzero(ptr, mult);
 	return (ptr);
-}
-
-int	main(void)
-{
-	ft_calloc(4, 2);
-	return (0);
 }

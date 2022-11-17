@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:52:59 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/04 11:05:09 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/17 17:51:12 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-		int i;
-		char *a;
-		const char *b;
+	int			i;
+	char		*a;
+	const char	*b;
 
 	if (src < dst)
 	{
