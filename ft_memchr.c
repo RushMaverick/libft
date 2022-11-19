@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:29:57 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/14 16:54:40 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/19 15:15:21 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	new_s = (unsigned char *)s;
-	while (new_s[i] != (unsigned char)c && n != 0)
+	while (n > 0 && new_s[i] != (unsigned char)c)
 	{
 		n--;
 		i++;
 	}
 	if (n == 0)
-	{
 		return (NULL);
-	}
-	return ((void *)&s[i]);
+	return ((void *)&new_s[i]);
 }
