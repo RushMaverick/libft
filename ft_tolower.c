@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:38:03 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/17 17:53:36 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/20 12:30:49 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	ft_tolower(int c)
 	size_t	new_c;
 
 	new_c = c;
-	if (new_c >= 65 || new_c <= 90)
-	{
+	if (new_c <= 'A' && new_c >= 'Z')
+		return ((int)new_c);
+	if (new_c >= 'A' && new_c <= 'Z')
 		new_c = new_c + 32;
-	}
-	return (new_c);
+	return ((int)new_c);
 }

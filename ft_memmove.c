@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:52:59 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/18 15:13:31 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/20 20:13:27 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 	if (!src && !dst)
 		return (NULL);
-	if (dst < src)
+	if (dst <= src)
 	{
 		i = 0;
-		while (i < n)
+		while (i <= n)
 		{
 			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 			i++;
@@ -37,4 +37,16 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		}
 	}
 	return (dst);
+}
+
+int main(void)
+{
+	char *str1;
+	char *res;
+	char str2[20];
+
+	str1 = "Peepeepoopoo";
+	res = ft_memmove(str2, str1, 21);
+	printf("%s\n", res);
+	return (0);
 }
