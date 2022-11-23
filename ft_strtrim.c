@@ -3,16 +3,20 @@
 char *ft_strtrim(char const *s1, char const *set)
 {
 	int i;
-	int j;
+	int end;
+	int start;
 	char *trimmed;
 
 	i = 0;
-	j = 0;
-	trimmed = (char *)s1;
-	while (s1[i] != '\0')
-	{
-		i++;
-	}
+	end = ft_strlen(s1);
+	start = 0;
+	while (ft_strchr(set, (int)s1[start]))
+		start++;
+	while (ft_strchr(set, (int)s1[end]) && end > start)
+		end--;
+	trimmed = malloc(sizeof(char));
+	if (!trimmed)
+		return (NULL);
 	return (trimmed);
 }
 
@@ -22,9 +26,10 @@ int	main(void)
 	char	*str2;
 	char	*res;
 
-	str1 = "AABAABBCC";
-	str2 = "AC";
+	str1 = "AABAABBCCAA";
+	str2 = "A";
 	res = ft_strtrim(str1, str2);
+	printf("%s\n", res);
 	return (0);
 }
 
