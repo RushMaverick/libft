@@ -14,7 +14,9 @@ char *ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (ft_strchr(set, (int)s1[end]) && end > start)
 		end--;
-	trimmed = malloc(sizeof(char));
+	printf("%c\n", s1[start]);
+	printf("%c\n", s1[end]);
+	trimmed = ft_substr(s1, start, end - start + 1);
 	if (!trimmed)
 		return (NULL);
 	return (trimmed);
@@ -27,7 +29,7 @@ int	main(void)
 	char	*res;
 
 	str1 = "AABAABBCCAA";
-	str2 = "A";
+	str2 = "AB";
 	res = ft_strtrim(str1, str2);
 	printf("%s\n", res);
 	return (0);
