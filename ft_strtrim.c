@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 10:53:03 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/24 13:51:36 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/24 15:58:49 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,4 @@ char *ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(""));
 	trimmed = ft_substr(s1, start, end - start + 1);
 	return (trimmed);
-}
-
-int	main(void)
-{
-	char	*str1;
-	char	*str2;
-	char	*res;
-
-	str1 = "";
-	str2 = " \n\t";
-	res = ft_strtrim(str1, str2);
-	printf("%s\n", res);
-	return (0);
 }
