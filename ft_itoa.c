@@ -1,30 +1,46 @@
 #include "libft.h"
 
+static int inputlen(int n)
+{
+	int len;
+
+	len = 0;
+	while (n > 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len + 1);
+	
+
+}
+
 char *ft_itoa(int n)
 {
-	char *convert;
-	int sign;
+	char *nbr;
+	int	len;
 
-	convert = (char *)malloc(sizeof(int) * n + 1);
-	sign = 1;
-	if (!convert)
-		return (NULL);
-	if (!n)
-		return (NULL);
-	if (n >= '0' && n <= '9')
-		convert = n * sign - '0';
-	return (convert);
+	len = inputlen(n);
+	printf("%d\n", len);
+	nbr = malloc(sizeof(char) * len);
+	
+	
+	inputlen(n % 10);
+	inputlen(n / 10);
+	
+	return (nbr);
 }
 
 int	main(void)
 {
 	int n;
-	char *a;
+	char *res;
 
-	n = 4;
-	a = ft_itoa(n);
-	printf("%s\n", a);
+	n = 455;
+
+	res = ft_itoa(n);
 	return (0);
+
 }
 
 // Parameters n: the integer to convert.
