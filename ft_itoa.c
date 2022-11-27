@@ -2,51 +2,50 @@
 
 static int inputlen(int n)
 {
-	int len;
+	int		len;
+	int		flip;
+	long	newn;
 
 	len = 0;
-	while (n > 0)
+	flip = -1;
+	newn = (long)n;
+	if (newn < 0)
 	{
-		n /= 10;
+		newn = newn * flip;
 		len++;
 	}
-	return (len + 1);
-	
-
+	while (newn > 0)
+	{
+		newn /= 10;
+		len++;
+	}
+	return (len);
 }
 
 char *ft_itoa(int n)
 {
-	char *nbr;
 	int	len;
+	int mod;
+	long newn;
+	char *nbr;
 
 	len = inputlen(n);
-	printf("%d\n", len);
-	nbr = malloc(sizeof(char) * len);
-	
-	
-	inputlen(n % 10);
-	inputlen(n / 10);
-	
+	mod = 0;
+	newn = (long)n;
+	nbr = malloc(sizeof(char) * len + 1);
+	if (!nbr)
+		return (NULL);
+	if (newn < 0)
+	{
+		newn = newn * -1;
+		nbr[0] = '-';
+	}
+	while (newn != 0)
+	{
+		mod = newn % 10;
+		newn = newn / 10;
+		nbr[len - 1] = mod + '0';
+		len--;
+	}
 	return (nbr);
 }
-
-int	main(void)
-{
-	int n;
-	char *res;
-
-	n = 455;
-
-	res = ft_itoa(n);
-	return (0);
-
-}
-
-// Parameters n: the integer to convert.
-// Return value The string representing the integer.
-// NULL if the allocation fails.
-// External functs. malloc
-// Description Allocates (with malloc(3)) and returns a string
-// representing the integer received as an argument.
-// Negative numbers must be handled.
