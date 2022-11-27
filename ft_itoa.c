@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/27 14:57:01 by rrask             #+#    #+#             */
+/*   Updated: 2022/11/27 15:02:221 by rrask            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int inputlen(int n)
@@ -9,6 +21,8 @@ static int inputlen(int n)
 	len = 0;
 	flip = -1;
 	newn = (long)n;
+	if (n == 0)
+		return(1);
 	if (newn < 0)
 	{
 		newn = newn * flip;
@@ -35,6 +49,9 @@ char *ft_itoa(int n)
 	nbr = malloc(sizeof(char) * len + 1);
 	if (!nbr)
 		return (NULL);
+	if (newn == 0)
+		nbr[0] = '0';
+	nbr[len] = '\0';
 	if (newn < 0)
 	{
 		newn = newn * -1;
@@ -48,4 +65,10 @@ char *ft_itoa(int n)
 		len--;
 	}
 	return (nbr);
+}
+
+int	main()
+{
+	printf("%s\n", ft_itoa(-0));
+	return (0);
 }
