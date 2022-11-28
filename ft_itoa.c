@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int inputlen(int n)
+static int	inputlen(int n)
 {
 	int		len;
 	int		flip;
@@ -22,7 +22,7 @@ static int inputlen(int n)
 	flip = -1;
 	newn = (long)n;
 	if (n == 0)
-		return(1);
+		return (1);
 	if (newn < 0)
 	{
 		newn = newn * flip;
@@ -36,12 +36,12 @@ static int inputlen(int n)
 	return (len);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int	len;
-	int mod;
-	long newn;
-	char *nbr;
+	int		len;
+	int		mod;
+	long	newn;
+	char	*nbr;
 
 	len = inputlen(n);
 	mod = 0;
