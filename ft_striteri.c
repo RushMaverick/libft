@@ -1,0 +1,18 @@
+#include "libft.h"
+
+void 	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	int len;
+
+	if (!s || !*s)
+		return ;
+	if (!f)
+		return ;
+	len = ft_strlen(s);
+	s[len] = '\0';
+	while (len >= 0)
+	{
+		(f)(len, &s[len]);
+		len--;
+	}
+}

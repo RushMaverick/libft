@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 10:34:39 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/29 11:13:26 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/29 12:37:38 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,3 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	temp[i] = '\0';
 	return (temp);
 }
-
-// int	main(void)
-// {
-// 	char *str1;
-// 	char *res;
-	
-// 	str1 = "What is my function?";
-// 	res = ft_strmapi(str1, (1, *str1));
-// 	return (0);
-// }
-
-// Parameters s: The string on which to iterate.
-// f: The function to apply to each character.
-// Return value The string created from the successive applications
-// of ’f’.
-// Returns NULL if the allocation fails.
-// External functs. malloc
-// Description Applies the function ’f’ to each character of the
-// string ’s’, and passing its index as first argument
-// to create a new string (with malloc(3)) 
