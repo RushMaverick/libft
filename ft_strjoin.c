@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 20:18:32 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/22 20:18:37 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/29 17:55:34 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
-	int 	j;
+	int		j;
 	char	*joined;
 
 	i = 0;

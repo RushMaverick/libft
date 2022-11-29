@@ -6,17 +6,17 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 10:34:39 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/29 12:37:38 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/29 17:55:29 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int i;
-	int len;
-	char *temp;
+	int		i;
+	int		len;
+	char	*temp;
 
 	if (!s || !*s)
 		return (NULL);

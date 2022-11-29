@@ -6,18 +6,17 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 10:53:03 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/24 15:58:49 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/29 17:56:26 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int end;
-	int start;
-	char *trimmed;
+	int		end;
+	int		start;
+	char	*trimmed;
 
 	if (!s1)
 		return (0);

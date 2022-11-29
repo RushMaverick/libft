@@ -6,15 +6,15 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:56:31 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/29 13:56:33 by rrask            ###   ########.fr       */
+/*   Updated: 2022/11/29 17:53:19 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void 	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int len;
+	int	len;
 
 	if (!s || !*s)
 		return ;

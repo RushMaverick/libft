@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char *ft_split(char const *s, char c)
+char **ft_split(char const *s, char c)
 {
 	int i;
 	int count;
@@ -22,7 +22,7 @@ char *ft_split(char const *s, char c)
 int main(void)
 {
 	char *str;
-	char *res;
+	char **res;
 	char c;
 
 	str = "Split at space";
