@@ -18,27 +18,14 @@ static int wordcount(char const *s, char c) //word count
 
 static char **applytoarr(char **strarr, char const *s, char c)
 {
-	int i;
-	int j;
 	char *temp;
 
-	i = 0;
-	j = 0;
-	while (j < 3)
+	while (strarr)
 	{
-		temp = strdup(s);
-		while (temp[i] == s[i])
-		{
-			while (s[i] != c)
-			{
-				strarr[i] = &temp[i];
-				i++;
-			}
-			strarr[j][i] = '\0';
-		}
-		strarr[j] = temp;
+		// Move pointer from strarr using strarr vs int i. 
+		temp = ft_strdup(s);
 		free(temp);
-		j++;
+		strarr++;
 	}
 	return (strarr);
 }
@@ -55,6 +42,7 @@ char **ft_split(char const *s, char c)
 		return ((char **)s);
 	count = wordcount(s, c); //Count represents the number of words/strings we need to allocate for.
 	strarr = (char **)malloc(sizeof(char) + (count + 1));
+	strarr[count] = '\0';
 	applytoarr(strarr, s, c);
 	return (strarr);
 }
