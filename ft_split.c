@@ -9,42 +9,53 @@ static int wordcount(char const *s, char c) //word count
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-		{
 			count++;
-		}
 		i++;
 	}
 	return (count);
 }
 
-char **ft_split(char const *s, char c)
+
+static char **applytoarr(char **strarr, char const *s, char c)
 {
 	int i;
+	int j;
+	char *temp;
+
+	i = 0;
+	j = 0;
+	while (j < 3)
+	{
+		temp = strdup(s);
+		while (temp[i] == s[i])
+		{
+			while (s[i] != c)
+			{
+				strarr[i] = &temp[i];
+				i++;
+			}
+			strarr[j][i] = '\0';
+		}
+		strarr[j] = temp;
+		free(temp);
+		j++;
+	}
+	return (strarr);
+}
+
+char **ft_split(char const *s, char c)
+{
 	int count;
 	// int len;
-	char *temp;
 	char **strarr;
 
 	if (!s || !*s)
 		return (NULL);
 	if (!c)
 		return ((char **)s);
-	i = 0;
 	count = wordcount(s, c); //Count represents the number of words/strings we need to allocate for.
 	strarr = (char **)malloc(sizeof(char) + (count + 1));
-	while (s[i])
-	{
-		if (s[i] == c)
-			return(0);
-		while (count > 0)
-		{
-			
-		}
-		i++;
-	}
-	//A function that counts the occurence of c, ie. words/strings. 
-	// Use that count to malloc a **strarr.
-	// so on
+	applytoarr(strarr, s, c);
 	return (strarr);
 }
 
