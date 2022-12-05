@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 10:59:42 by rrask             #+#    #+#             */
-/*   Updated: 2022/12/05 10:22:27 by rrask            ###   ########.fr       */
+/*   Updated: 2022/12/05 11:13:25 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t			 i;
-	char			*a;
-	char			*b;
+	size_t	i;
+	char	*a;
+	char	*b;
 
 	a = (char *)dst;
 	b = (char *)src;
