@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:52:59 by rrask             #+#    #+#             */
-/*   Updated: 2022/12/05 11:13:30 by rrask            ###   ########.fr       */
+/*   Updated: 2022/12/05 18:32:23 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		while (n--)
 			*(a++) = *(b++);
 	}
-	return (a);
+	return (dst);
 }
