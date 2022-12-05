@@ -6,19 +6,14 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 10:26:27 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/29 17:43:52 by rrask            ###   ########.fr       */
+/*   Updated: 2022/12/05 10:48:23 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <ctype.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
-# include <strings.h>
 # include <unistd.h>
-# include <xlocale.h>
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 
