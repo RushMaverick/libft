@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 11:54:55 by rrask             #+#    #+#             */
-/*   Updated: 2022/12/05 19:26:49 by rrask            ###   ########.fr       */
+/*   Updated: 2022/12/06 15:59:14 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,31 +43,46 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dstlen;
-
+	size_t	srclen;
+	size_t i;
+	
+	i = 0;
+	if (dstsize == 0)
+		return ((size_t)ft_strlen((char *)src));
 	dstlen = ft_strlen(dst);
-	while (*src && dstlen < dstsize - 1)
+	srclen = ft_strlen((char *)src);
+	if (dstsize < dstlen)
+		return (dstsize + srclen);
+	while (*(src + i) != '\0' && dstsize > dstlen + 1 + i)
 	{
-		dst[dstlen] = *src;
-		src++;
-		dstlen++;
+		*(dst + dstlen + i) = *(src + i);
+		i++;
 	}
-	dst[dstlen] = '\0';
-	return (dstlen);
+	*(dst + dstlen + i) = '\0';
+	return (dstlen + srclen);
 }
 
-int	main(void)
-{
-	char dst[6] = "Yup";
-	char *src;
-	size_t res;
-	size_t res2;
 
-	src = "Yup";
-	res = ft_strlcat(dst, src, 6);
-	res2 = strlcat(dst, src, 6);
-	printf("Mine: %zu\n", res);
-	printf("OG: %zu\n", res2);
-	printf("Mine: %s\n", dst);
-	printf("OG: %s\n", dst);
-	return (0);
-}
+// [fail]: your strlcat does not work with basic input
+// [fail]: your strlcat return value is false
+// [crash]: your strlcat crush when null parameter is sent with a size of 0
+
+
+// int	main(void)
+// {
+// 	// char *dst = NULL;
+// 	// char *src;
+// 	// size_t res;
+// 	size_t res2;
+// 	char b[0xF] = "nyan !";
+
+// 	// res = ft_strlcat(((void *)0), b, 0);
+// 	// src = NULL;
+// 	// res = ft_strlcat(dst, src, 0);
+// 	res2 = strlcat(((void *)0), b, 0);
+// 	// printf("Mine: %zu\n", res);
+// 	printf("OG: %zu\n", res2);
+// 	// printf("Mine: %s\n", dst);
+// 	// printf("OG: %s\n", dst);
+// 	return (0);
+// }
