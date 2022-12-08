@@ -1,7 +1,6 @@
 #include "libft.h"
-#include <stdio.h>
 
-static int	wordcount(char const *s, char c) //word count
+static int	wordcount(char const *s, char c)
 {
 	int count;
 	int i;
@@ -14,7 +13,6 @@ static int	wordcount(char const *s, char c) //word count
 			count++;
 		i++;
 	}
-	printf("%d\n", count);
 	return (count);
 }
 
@@ -24,7 +22,6 @@ char	**writeuntilc(const char *s, int c, char **strarr)
 	char	*begin;
 	char	*end;
 
-	// const char *start = s;
 	i = 0;
 	while (*s)
 	{
@@ -48,15 +45,12 @@ char	**writeuntilc(const char *s, int c, char **strarr)
 char	**ft_split(char const *s, char c)
 {
 	int		count;
-	int		j;
 	char	**strarr;
 
-	j = 0;
 	strarr = 0;
 	if (!s)
 		return (0);
 	count = wordcount(s, c);
-	//Count represents the number of words/strings we need to allocate for.
 	strarr = (char **)malloc(sizeof(char *) * (count) + 1);
 	if (!strarr)
 		return (NULL);

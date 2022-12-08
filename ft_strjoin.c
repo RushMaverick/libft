@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 22:53:17 by rrask             #+#    #+#             */
-/*   Updated: 2022/12/08 23:10:05 by rrask            ###   ########.fr       */
+/*   Updated: 2022/12/08 23:53:59 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,8 @@ static void	istheres(char *joined, char const *s1, char const *s2)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		j;
 	char	*joined;
 
-	i = 0;
-	j = 0;
 	if (!s1 || !s2)
 		return (NULL);
 	joined = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
