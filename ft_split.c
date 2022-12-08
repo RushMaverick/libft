@@ -5,31 +5,44 @@ static int	wordcount(char const *s, char c) //word count
 {
 	int count;
 	int i;
+
 	i = 0;
-	count = 1;
+	count = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
 			count++;
 		i++;
 	}
+	printf("%d\n", count);
 	return (count);
 }
 
-char *writeuntilc(const char *s, int c)
+char	**writeuntilc(const char *s, int c, char **strarr)
 {
-	int i;
-	char *temp;
+	int		i;
+	char	*begin;
+	char	*end;
 
+	// const char *start = s;
 	i = 0;
-	temp = (char*)s;
-	while (*s != c && s[i])
+	while (*s)
 	{
-		s++;
-		i++;
+		while (*s && *s == c)
+			s++;
+		begin = (char *)s;
+		while (*s && *s != c)
+			s++;
+		end = (char *)s;
+		if (begin != end)
+		{
+			strarr[i++] = ft_substr(begin, 0, end - begin);
+			if (!strarr)
+				return (NULL);
+		}
 	}
-	temp = ft_substr(temp, 0, ft_strlen(temp) - ft_strlen(s));
-	return (temp);
+	strarr[i] = NULL;
+	return (strarr);
 }
 
 char	**ft_split(char const *s, char c)
@@ -40,44 +53,13 @@ char	**ft_split(char const *s, char c)
 
 	j = 0;
 	strarr = 0;
-	if (!s || !*s)
-		return (NULL);
-	if (!c)
-		return ((char **)s);
+	if (!s)
+		return (0);
 	count = wordcount(s, c);
-		//Count represents the number of words/strings we need to allocate for.
+	//Count represents the number of words/strings we need to allocate for.
 	strarr = (char **)malloc(sizeof(char *) * (count) + 1);
 	if (!strarr)
 		return (NULL);
-	while (j < count) // This could be done inside writeuntilc
-	{
-		// while (*s != c)
-		// 	s++;
-		strarr[j] = writeuntilc(s, c);
-		j++;
-	}
+	writeuntilc(s, c, strarr);
 	return (strarr);
 }
-
-int	main(void)
-{
-	char	*str;
-	char	**res;
-	char	c;
-
-	str = "Split at space";
-	c = ' ';
-	res = ft_split(str, c);
-	printf("%s\n", res[0]);
-	return (0);
-}
-
-// Parameters s: The string to be split.
-// c: The delimiter character.
-// Return value The array of new strings resulting from the split.
-// NULL if the allocation fails.
-// External functs. malloc, free
-// Description Allocates (with malloc(3)) and returns an array
-// of strings obtained by splitting ’s’ using the
-// character ’c’ as a delimiter. The array must end
-// with a NULL pointer.
