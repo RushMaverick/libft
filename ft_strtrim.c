@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 10:53:03 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/29 17:56:26 by rrask            ###   ########.fr       */
+/*   Updated: 2022/12/09 17:39:04 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	char	*trimmed;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (0);
-	if (!set)
-		return ((char *)s1);
-	end = ft_strlen(s1);
+	end = ft_strlen(s1) - 1;
 	start = 0;
-	while (ft_strchr(set, (int)s1[start]))
+	while (s1[start] && ft_strchr(set, (int)s1[start]))
 		start++;
 	while (ft_strchr(set, (int)s1[end]) && end > start)
 		end--;
-	if (start > end)
+	if (start >= end)
 		return (ft_strdup(""));
 	trimmed = ft_substr(s1, start, end - start + 1);
 	return (trimmed);
