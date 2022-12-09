@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 14:57:01 by rrask             #+#    #+#             */
-/*   Updated: 2022/12/08 23:12:40 by rrask            ###   ########.fr       */
+/*   Updated: 2022/12/09 16:22:50 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,18 @@ static int	inputlen(int n)
 	return (len);
 }
 
+static long	newnzero(long newn, int mod, int len, char *nbr)
+{
+	while (newn != 0)
+	{
+		mod = newn % 10;
+		newn = newn / 10;
+		nbr[len - 1] = mod + '0';
+		len--;
+	}
+	return (newn);
+}
+
 char	*ft_itoa(int n)
 {
 	int		len;
@@ -57,12 +69,6 @@ char	*ft_itoa(int n)
 		newn = newn * -1;
 		nbr[0] = '-';
 	}
-	while (newn != 0)
-	{
-		mod = newn % 10;
-		newn = newn / 10;
-		nbr[len - 1] = mod + '0';
-		len--;
-	}
+	newnzero(newn, mod, len, nbr);
 	return (nbr);
 }
