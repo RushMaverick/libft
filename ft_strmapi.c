@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 10:34:39 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/29 17:55:29 by rrask            ###   ########.fr       */
+/*   Updated: 2022/12/12 12:00:28 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		len;
 	char	*temp;
 
-	if (!s || !*s)
+	if (!s)
 		return (NULL);
 	if (!f)
 		return ((char *)s);
