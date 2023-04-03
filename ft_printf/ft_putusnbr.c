@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putusnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 11:10:34 by rrask             #+#    #+#             */
-/*   Updated: 2022/11/16 18:00:10 by rrask            ###   ########.fr       */
+/*   Created: 2023/01/05 15:09:44 by rrask             #+#    #+#             */
+/*   Updated: 2023/01/10 16:13:42 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_putusnbr(unsigned int c)
 {
-	ft_memset(s, 0, n);
+	int	pr_len;
+
+	pr_len = 0;
+	if (c > 9)
+		pr_len += ft_putusnbr(c / 10);
+	pr_len += ft_putchar_print(c % 10 + '0');
+	return (pr_len);
 }
