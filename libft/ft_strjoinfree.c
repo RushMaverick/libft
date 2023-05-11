@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 14:52:09 by rrask             #+#    #+#             */
-/*   Updated: 2023/04/03 15:53:59 by rrask            ###   ########.fr       */
+/*   Created: 2023/04/17 09:21:41 by rrask             #+#    #+#             */
+/*   Updated: 2023/04/28 11:33:23 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static void	istheres(char *joined, char const *s1, char const *s2)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -38,48 +38,19 @@ static void	istheres(char *joined, char const *s1, char const *s2)
 char	*ft_strjoinfree(char const *buf, char const *read_buf)
 {
 	char	*joined;
+	int		buf_len;
+	int		read_buf_len;
 
-	joined = ft_calloc(ft_strlen(buf) + ft_strlen(read_buf) + 1, sizeof(char));
+	if (!buf)
+		buf_len = 0;
+	else
+		buf_len = ft_strlen(buf);
+	read_buf_len = ft_strlen(read_buf);
+	joined = ft_calloc(buf_len + read_buf_len + 1, sizeof(char));
 	if (!joined)
 		return (NULL);
 	istheres(joined, buf, read_buf);
-	free((void *)buf);
-	return (&*joined);
-}
-
-int	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-void	ft_bzero(void *str, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-		((char *)str)[i++] = '\0';
-}
-
-void	*ft_calloc(size_t count, size_t size)
-
-{
-	void	*ptr;
-	size_t	mult;
-
-	if (count == 0 || size == 0)
-		return (NULL);
-	mult = count * size;
-	if (mult / count != size)
-		return (NULL);
-	ptr = malloc(mult);
-	if (!ptr)
-		return (0);
-	ft_bzero(ptr, mult);
-	return (ptr);
+	if (buf)
+		free((void *)buf);
+	return (joined);
 }

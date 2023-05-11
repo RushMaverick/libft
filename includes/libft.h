@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 10:26:27 by rrask             #+#    #+#             */
-/*   Updated: 2023/04/03 16:39:02 by rrask            ###   ########.fr       */
+/*   Updated: 2023/04/20 14:57:01 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include "get_next_line.h"
+# include "ft_printf.h"
 # define RAS_MAX 2147483647
 # define RAS_MIN -2147483648
 
@@ -48,6 +50,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_strlen(const char *str);
+int		ft_strlenexclude(const char *str, char c);
+int		ft_strchrint(const char *s, int c);
+char	*ft_strjoinfree(char const *line, char const *buf);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
